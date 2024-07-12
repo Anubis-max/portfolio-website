@@ -1,0 +1,29 @@
+.topBlur {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    min-width: 350px;
+    min-width: 350px;
+    top: 12vw;
+    left: 5vw;
+    border: 764px;
+    background: var(--blur-color);
+    filter: blur(1000px);
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    z-index: 0;
+}
+
+@keyframes floating{
+    0% { 
+        transform: rotate(0deg)  
+              translateY(100px) rotate(0deg); 
+    } 
+
+    100% { 
+        transform: rotate(360deg)  
+              translateY(100px) rotate(-360deg); 
+    } 
+}
