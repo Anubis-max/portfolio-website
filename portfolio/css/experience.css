@@ -2,9 +2,8 @@
     position: relative;
     border-radius: 15px;
     padding: 73px;
-    margin-top: 129px;
     z-index: 1;
-    margin: 10% 10% 10% 10%;
+    margin: 4% 10% 4% 10%;
     background-color: var(--about-color);
 }
 
