@@ -31,4 +31,42 @@ function toggleSlider() {
     isPlaying = !isPlaying;
 }
 
+function enterFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { 
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { 
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { 
+        element.msRequestFullscreen();
+    }
+}
+
+function addFullscreenEvent() {
+    let slides = document.getElementsByClassName("scaled-image");
+    for (let slide of slides) {
+        slide.addEventListener('click', function() {
+            if (isPlaying) {
+                toggleSlider(); 
+            }
+            enterFullscreen(slide);
+            slide.classList.add('fullscreen');
+        });
+    }
+}
+
+document.addEventListener("fullscreenchange", function() {
+    if (!document.fullscreenElement) {
+        let slides = document.getElementsByClassName("scaled-image");
+        for (let slide of slides) {
+            slide.classList.remove('fullscreen');
+        }
+        if (!isPlaying) {
+            toggleSlider(); 
+        }
+    }
+});
+
 showSlides();
+addFullscreenEvent();
