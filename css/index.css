@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -43,5 +44,4 @@ html, body {
     grid-area: content;
     background-color: var(--content-color);
     overflow: auto;
-    overflow-x: hidden;
 }

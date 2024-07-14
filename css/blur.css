@@ -19,11 +19,17 @@
 @keyframes floating{
     0% { 
         transform: rotate(0deg)  
-              translateY(100px) rotate(0deg); 
+              translateY(30px) rotate(0deg); 
     } 
 
     100% { 
         transform: rotate(360deg)  
-              translateY(100px) rotate(-360deg); 
+              translateY(30px) rotate(-360deg); 
     } 
+}
+
+@media screen and (max-width: 830px) {
+    .topBlur {
+        min-width: 250px;
+    }
 }
